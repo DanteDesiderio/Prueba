@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListaMaquinas.MainPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+        <StackLayout Background="#84b6f4">
+            <Frame HorizontalOptions="Center"
+                   Margin="25"
+                   CornerRadius="20">
+                <Label Text="Máquinas"
+                   FontSize="20"
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold"
+                   TextColor="Black"/>
+            </Frame>
+            <Frame CornerRadius="20"
+                   Margin="25,0,25,25">
+                <StackLayout>
+                    <ListView x:Name="maquinasListView" ItemSelected="OnItemSelected">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextCell Text="{Binding Descripcion}"
+                                          Detail="{Binding Tipo}"
+                                          TextColor="Black"
+                                          DetailColor="Gray"
+                                          />
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

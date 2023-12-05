@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListaMaquinas.DetallesMaquinaPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+        <Grid RowDefinitions="*,*,*"
+              BackgroundColor="#84b6f4">
+            <Frame BackgroundColor="White"
+                   CornerRadius="20"
+                   Margin="20"
+                   VerticalOptions="Center">
+                <StackLayout>
+                    <Label Text="Detalles de la Máquina" 
+                           FontSize="25" 
+                           HorizontalOptions="CenterAndExpand" 
+                           FontAttributes="Bold"
+                           TextColor="Black"/>
+                    <Label Text="{Binding Descripcion}" 
+                           FontSize="30" 
+                           HorizontalOptions="CenterAndExpand"
+                           Margin="0,25,0,0" />
+                    <Label Text="{Binding Tipo}" 
+                           FontSize="25" 
+                           HorizontalOptions="CenterAndExpand" 
+                           Margin="0,5,0,0" />
+                </StackLayout>
+            </Frame>
+            <Button Text="Volver"
+                    FontSize="20"
+                    TextTransform="None"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    FontAttributes="Bold"
+                    BackgroundColor="White"
+                    CornerRadius="20"
+                    Grid.Row="2"
+                    x:Name="VolverMainPage"
+                    Clicked="VolverMainPage_Clicked"/>
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>
