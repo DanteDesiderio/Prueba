@@ -29,6 +29,8 @@
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
+                    <Label x:Name="resultadoLabel" Text="Resultado: " />
+                    <Button Text="Obtener Valor" Clicked="OnObtenerValorClicked" />
                 </StackLayout>
             </Frame>
         </StackLayout>

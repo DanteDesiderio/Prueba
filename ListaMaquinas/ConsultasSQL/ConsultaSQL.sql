@@ -1,0 +1,1 @@
+﻿select codmaq from [dbo].[APPStMaqui] where codmaq=11

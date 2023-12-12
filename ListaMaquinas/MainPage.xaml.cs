@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TuProyecto;
 using Xamarin.Forms;
 
 namespace ListaMaquinas
@@ -12,6 +13,8 @@ namespace ListaMaquinas
     public partial class MainPage : ContentPage
     {
         ObservableCollection<Maquina> maquinas;
+
+        private readonly SqlManager sqlManager;
 
         public MainPage()
         {
@@ -25,8 +28,22 @@ namespace ListaMaquinas
             };
 
             maquinasListView.ItemsSource = maquinas;
+
+            // Reemplaza "tu_cadena_de_conexion" con tu cadena de conexión real
+            sqlManager = new SqlManager("LAPTOP-KAM0F61V\\SQLEXPRESS02");
         }
 
+        private void OnObtenerValorClicked(object sender, EventArgs e)
+        {
+            // Reemplaza la consulta con tu consulta real
+            string query = "SELECT codmaq FROM [dbo].[APPStMaqui] WHERE codmaq=11;";
+
+            // Ejecutar la consulta y obtener el resultado
+            string resultado = sqlManager.EjecutarConsulta(query);
+
+            // Mostrar el resultado en el Label
+            resultadoLabel.Text = $"Resultado: {resultado}";
+        }
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem == null)

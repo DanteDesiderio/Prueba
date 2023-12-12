@@ -27,6 +27,12 @@
                            Margin="0,5,0,0" />
                 </StackLayout>
             </Frame>
+            <Entry Keyboard="Text"
+                   Grid.Row="1"
+                   Placeholder="Ingresar código de máquina"
+                   TextColor="Black"
+                   FontSize="20"
+                   x:Name="txtcodmaq"/>
             <Button Text="Volver"
                     FontSize="20"
                     TextTransform="None"
